@@ -85,50 +85,53 @@ $n$
         \includegraphics[scale=0.4]{images/wheels_wheel.png}
     }
 \end{align*}
-לשם הנוחות, נסמן את המסות ב 
-$M_1, M_2, M_3, \dots, M_n$
-כך ש 
-$M_n$
-היא המסה 
-$m_i$
-שמבקשים למצוא את התאוצה שלה.\\
-את המשוואה הראשונה נקבל מחוק שימור החבל:\\
-
-
 \begin{flalign*}
-    &L=2\sum_{1}^{n} l_i \qquad\qquad\qquad \Bigg/\frac{d^2}{d^2 t}&&\\
-    &0=\ddot{L}=2\sum_{1}^{n} A_i \quad\quad\quad\quad \Bigg/ :2 &&\\
-    &\sum_{1}^{n} A_i = 0
+    &L=2\sum_{j\;=\;1}^{n} l_j \qquad\qquad\qquad \Bigg/\frac{d^2}{d^2 t}&&\\
+    &0=\ddot{L}=2\sum_{j\;=\;1}^{n} a_j \quad\quad\quad\quad \Bigg/ :2 &&\\
+    &\sum_{j\;=\;1}^{n} a_j = 0&&
 \end{flalign*}
 
 נשתמש בחוק השני של ניוטון על מסה 
-$M_k$
+$m_i$
 כלשהי:\\
 \begin{flalign*}
-    &2T-M_k g = M_k A_k&&\\
-    &2T=M_k g  + M_k g&&
+    &m_i a_i = 2T-m_i g \qquad\qquad\qquad \Bigg/ : m_i &&\\
+    &a_i = \frac{2T}{m_i} - g &&
 \end{flalign*}
 
 כעת נסכום את המשוואות עבור כל המסות:
 \begin{flalign*}
-    &n \cdot 2T = \sum_{i\,=\,1}^{n} M_i g + \sum_{i\,=\,1}^{n} M_i A_i = 0&&\\
-    &n\cdot(M_n g + M_n A_n) = \sum_{i\,=\,1}^{n} M_i g + \sum_{i\,=\,1}^{n} M_i A_i = 0&&\\
-    &n M_n g + n M_n A_n = \sum_{i\,=\,1}^{n-1} M_i g + \sum_{i\,=\,1}^{n-1} M_i A_i + M_n g + M_n A_n&&
+    & 2T \left( \sum_{j\;=\;1}^{n} \frac{1}{m_j} \right) - n g = \sum_{j\;=\;1}^{n} a_j = 0 &&\\
+    & 2T = g \frac{n}{\displaystyle \sum_{j\;=\;1}^{n} \frac{1}{m_j}} = g \cdot H(m_1, m_2, \dots, m_n) &&
 \end{flalign*}
-
+נציב את המתיחות שמצאנו בנוסחה לתאוצה של גוף כללי:
 \begin{flalign*}
-    &(n-1) M_n g + (n-1) M_n A_n = \sum_{i\,=\,1}^{n-1} M_i g + \sum_{i\,=\,1}^{n-1} M_i A_i \qquad\qquad\qquad \Bigg/ : (n-1) M_n&&\\
-    &A_n + g = \sum_{i\,=\,1}^{n-1} \frac{M_i g}{(n-1)M_n} + \sum_{i\,=\,1}^{n-1} \frac{M_i A_i}{(n-1)M_n}&&\\
-    &A_n = \sum_{i\,=\,1}^{n-1} \frac{M_i g}{(n-1)M_n} + \sum_{i\,=\,1}^{n-1} \frac{M_i A_i}{(n-1)M_n} \;- \;g
+    & a_i = \frac{g}{m_i} H(m_1, m_2, \dots, m_n)\;-\;g &&
 \end{flalign*}
+\textbf{הערה: }
+$H(m_1, m_2, \dots, m_n)$
+זה הממוצע ההרמוני של המסות.
 
-נסמן את סך כל הכוחות הממוצע הפועל על הגופים 1 עד $n-1$ ב 
-$\Bar{F}$
-ואת כח המשיכה הממוצע הפועל על הגופים 1 עד $n-1$ ב 
-$\Bar{W}$.
-\begin{flalign*}
-    A_n = \frac{\Bar{W}}{M_n} + \frac{\Bar{F}}{M_n} \;- \;g
-\end{flalign*}
+
+% \begin{flalign*}
+%     &n \cdot 2T = \sum_{i\,=\,1}^{n} M_i g + \sum_{i\,=\,1}^{n} M_i A_i = 0&&\\
+%     &n\cdot(M_n g + M_n A_n) = \sum_{i\,=\,1}^{n} M_i g + \sum_{i\,=\,1}^{n} M_i A_i = 0&&\\
+%     &n M_n g + n M_n A_n = \sum_{i\,=\,1}^{n-1} M_i g + \sum_{i\,=\,1}^{n-1} M_i A_i + M_n g + M_n A_n&&
+% \end{flalign*}
+
+% \begin{flalign*}
+%     &(n-1) M_n g + (n-1) M_n A_n = \sum_{i\,=\,1}^{n-1} M_i g + \sum_{i\,=\,1}^{n-1} M_i A_i \qquad\qquad\qquad \Bigg/ : (n-1) M_n&&\\
+%     &A_n + g = \sum_{i\,=\,1}^{n-1} \frac{M_i g}{(n-1)M_n} + \sum_{i\,=\,1}^{n-1} \frac{M_i A_i}{(n-1)M_n}&&\\
+%     &A_n = \sum_{i\,=\,1}^{n-1} \frac{M_i g}{(n-1)M_n} + \sum_{i\,=\,1}^{n-1} \frac{M_i A_i}{(n-1)M_n} \;- \;g
+% \end{flalign*}
+
+% נסמן את סך כל הכוחות הממוצע הפועל על הגופים 1 עד $n-1$ ב 
+% $\Bar{F}$
+% ואת כח המשיכה הממוצע הפועל על הגופים 1 עד $n-1$ ב 
+% $\Bar{W}$.
+% \begin{flalign*}
+%     A_n = \frac{\Bar{W}}{M_n} + \frac{\Bar{F}}{M_n} \;- \;g
+% \end{flalign*}
 
 
 
