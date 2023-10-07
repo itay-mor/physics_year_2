@@ -70,12 +70,35 @@ $n$
         \includegraphics[scale=0.4]{images/t2_q2_diagram.png}
     }
 \end{align*}
-מהשרטוט ניתן לראות ש-
-\begin{flalign*}
-    &4T = (m+M)g&&
-    \\&T = (m+M)\frac{g}{4}&&
-\end{flalign*}
+\begin{enumerate}
+    \item 
+    מהשרטוט ניתן לראות שמופעל על הפלטפורמה התחתונה כח של 
+    $4T$
+    )ארבעה קצוות חבל שנכנסים ויוצאים מהגלגלת התחתונה(.\\
+    בנוסף, מהחוק השלישי של ניוטון בגלל שאלה מושכת את החבל למטה בכח 
+    $T$,
+    החבל מפעיל על אלה כח 
+    $T$
+    למעלה, כלומר היא לא מפעילה את כל כח הכבידה שלה על הפלטפורמה.
+    מהחוק הראשון של ניוטון נקבל
+    \begin{flalign*}
+        &4T = Mg + mg - T&&\\
+        &5T = (m+M)g&&\\
+        &T = (m+M)\frac{g}{5}&&
+    \end{flalign*}
+    לכן אלה צריכה למשוך את החבל בכח 
+    $T = \frac{\displaystyle (m+M)g}{\displaystyle 5}$.
 
+    \item 
+    מכיוון שקצה החבל שאלה משכה, "התארך" ב
+    $D$,
+    כל חלקי החבל במערכת הגלגלות משמאל לאלה, צריכים ביחד "להתקצר" ב
+    $D$.
+    מכיוון שהמתיחות חייבת להשמר לאורך החבל, כל קצוות החבל חייבים להתקצר באותו אורך )אחרת חלק מהקצוות יהיו "משוחררים"(
+    לכן כל קצה חבל יתקצר ב
+    $\frac{D}{4}$
+    וזה יהיה הגובה בו אלה והבלוק יעלו ביחס לקרקע.
+\end{enumerate}
 
 \newpage
 \subsection*{גלגל הגלגלות}
@@ -113,37 +136,12 @@ $H(m_1, m_2, \dots, m_n)$
 זה הממוצע ההרמוני של המסות.
 
 
-% \begin{flalign*}
-%     &n \cdot 2T = \sum_{i\,=\,1}^{n} M_i g + \sum_{i\,=\,1}^{n} M_i A_i = 0&&\\
-%     &n\cdot(M_n g + M_n A_n) = \sum_{i\,=\,1}^{n} M_i g + \sum_{i\,=\,1}^{n} M_i A_i = 0&&\\
-%     &n M_n g + n M_n A_n = \sum_{i\,=\,1}^{n-1} M_i g + \sum_{i\,=\,1}^{n-1} M_i A_i + M_n g + M_n A_n&&
-% \end{flalign*}
-
-% \begin{flalign*}
-%     &(n-1) M_n g + (n-1) M_n A_n = \sum_{i\,=\,1}^{n-1} M_i g + \sum_{i\,=\,1}^{n-1} M_i A_i \qquad\qquad\qquad \Bigg/ : (n-1) M_n&&\\
-%     &A_n + g = \sum_{i\,=\,1}^{n-1} \frac{M_i g}{(n-1)M_n} + \sum_{i\,=\,1}^{n-1} \frac{M_i A_i}{(n-1)M_n}&&\\
-%     &A_n = \sum_{i\,=\,1}^{n-1} \frac{M_i g}{(n-1)M_n} + \sum_{i\,=\,1}^{n-1} \frac{M_i A_i}{(n-1)M_n} \;- \;g
-% \end{flalign*}
-
-% נסמן את סך כל הכוחות הממוצע הפועל על הגופים 1 עד $n-1$ ב 
-% $\Bar{F}$
-% ואת כח המשיכה הממוצע הפועל על הגופים 1 עד $n-1$ ב 
-% $\Bar{W}$.
-% \begin{flalign*}
-%     A_n = \frac{\Bar{W}}{M_n} + \frac{\Bar{F}}{M_n} \;- \;g
-% \end{flalign*}
-
-
-
-
-
-
 
 \newpage
 \section*{חשבון דיפרנציאלי}
 \subsection*{כללי נגזרות}
 \begin{enumerate}
-    \item כלל המכפלה: \\
+  \item \textbf{כלל המכפלה:} \\
     נפרק את מכפלת הפונקציות כמתואר באיור הבא: 
     \begin{align*}
         \centering
@@ -161,7 +159,7 @@ $H(m_1, m_2, \dots, m_n)$
         = \frac{d f}{d x} g + \frac{d g}{d x} f&&
     \end{flalign*}
 
-    \item כלל המנה:
+  \item \textbf{כלל המנה:}
     \begin{flalign*}
         \frac{d \left( \frac{f}{g}\right)}{d x} = \lim_{h \to 0}{\frac{\frac{f(x+h)}{g(x+h)} - \frac{f(x)}{g(x)}}{h}}
         = \lim_{h \to 0}{\frac{\frac{f(x+h)g(x) - f(x)g(x+h)}{g(x)g(x+h)}}{h}}
@@ -173,6 +171,30 @@ $H(m_1, m_2, \dots, m_n)$
     \begin{flalign*}
         = \frac{\displaystyle \lim_{h \to 0}{g(x) \cdot [f(x+h) - f(x)]} - \lim_{h \to 0}{f(x) \cdot [g(x+h) - g(x)]}}{g^2(x)}
         = \frac{f(x) \frac{d f}{d x} - g(x) \frac{d g}{d x}}{g^2(x)}&&
+    \end{flalign*}
+  \item \textbf{כלל השרשרת:}\\
+    נשתמש בהגדרה השנייה של נגזרת:
+    \begin{flalign*}
+        &\frac{d\,f(g(x))}{d\,x}=\lim_{x \to x_0}{\frac{f(g(x_0)) - f(g(x))}{x_0 - x}}&&
+    \end{flalign*}
+    נרחיב את המונה והמכנה ב 
+    $g(x_0) - g(x)$:
+    \begin{flalign*}
+        &\lim_{x \to x_0}{\frac{[f(g(x_0)) - f(g(x))]\cdot[g(x_0) - g(x)]}{[g(x_0) - g(x)]\cdot[x_0 - x]}}&&\\
+        &\lim_{x \to x_0}{\frac{f(g(x_0)) - f(g(x))}{g(x_0) - g(x)}} \cdot \lim_{x \to x_0}{\frac{g(x_0) - g(x)}{x_0 - x}}&&
+    \end{flalign*}
+    מכיוון ש
+    $g$
+    גזירה בסביבות הנקודה
+    $x_0$,
+    היא בהכרח גם רציפה בסביבה זו. כלומר הביטוי
+    $x \to x_0$,
+    שקול ל-
+    $g(x) \to g(x_0)$
+    לכן הגבול מלמעלה שקול לגבול:
+    \begin{flalign*}
+        &\lim_{g(x) \to g(x_0)}{\frac{f(g(x_0)) - f(g(x))}{g(x_0) - g(x)}} \,\cdot \lim_{x \to x_0}{\frac{g(x_0) - g(x)}{x_0 - x}} =
+        \frac{d\,f}{d\,g}\cdot\frac{d\,g}{d\,x}&&
     \end{flalign*}
 \end{enumerate}
 
