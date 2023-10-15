@@ -10,14 +10,157 @@
 \usepackage{empheq}
 \usepackage{dashbox}
 
+\newcommand{\image}[2]{
+    \begin{align*}
+        \centering
+        \includegraphics[scale=#2]{#1}
+    \end{align*}
+}
+
 \title{נבחרת ישראל הצעירה בפיזיקה - מטלה 2 }
 \author{איתי מור}
 \begin{document}
 \maketitle
 
+\section*{שאלות פתוחות מהאימונים}
+\subsection*{חוק הציפה של ארכימדס )שאלה פתוחה מהאימון של אשכול A(}
+\begin{enumerate}
+    \item 
+    מסת הקובייה היא $a^3\rho$
+
+    \item 
+    קודם כל פועל על הקובייה כח כבידה בגודל: $a^3\rho g$.
+    בנוסף, בגלל שהאוקיינוס שקט והמים בו לא זזים בכלל, שאר המים באוקיינוס חייבים להפעיל על הקוביה כח נגדי כלפי מעלה באותו גודל.
+    \image{images/archimedes_rule_diagram1.png}{0.8}
+    
+    \item 
+    ראשית, ברור שכח המשיכה יהיה שונה בהתאם לשונות המסה. כח המשיכה על הקובייה החדשה יהיה
+    $Mg$.
+    שנית, מכיוון שלמים יש אינטרקציה רק עם החלק החיצוני של הקובייה, הכח שהם מפעילים עליה יכול להיות תלוי רק בנפח הקוביה ולא יכול להשתנות בין צפיפויות שונות )המים לא יכולים להבדיל בין קוביית מים, לקוביית אחרת עם אותם מימדים(.
+    כלומר כח הציפה יהיה זהה על שתי הקוביות ולכן גם על הקוביה המוצקה יפעל כח של:
+    $a^3\rho g$.
+    \image{images/archimedes_rule_diagram2.png}{0.64}
+
+    \item 
+    נסמן את צפיפות הקובייה המוצקה ב
+    $\rho_2 = \frac{M}{a^3}$.
+    התנאי שהקובייה תצוף אל פני המים הוא:
+    \begin{flalign*}
+        & Mg < a^3\rho g &&\\
+        & a^3 \rho_2 < a^3 \rho &&\\
+        & \rho_2 < \rho &&
+    \end{flalign*}
+    כלומר התנאי הוא שצפיפות הקובייה תהיה קטנה מצפיפות המים.
+
+
+    \item 
+    הקוביה מאיצה מעלה בתאוצה 
+    $\frac{a^3\rho g - Mg}{M}$
+    לכן המרחק שהיא תעבור אחרי $t$ שניות הוא:
+    \begin{flalign*}
+        & \frac{\left( \frac{a^3\rho g - Mg}{M} \right)t^2}{2} = H&&\\
+        & t = \sqrt{\frac{2MH}{a^3\rho g - Mg}} &&
+    \end{flalign*}
+    מכיוון שאמרו שצלע הקובייה זניחה ביחס לגובה מתחת לפני המים שלה, אין צורך להתעסק בזמן שלוקח לפאות השונות שלה להגיע אל פני המים.
+
+    \item 
+    תחילה נחשב את המהירות של הקוביה רגע לפני שהיא יוצאת מהמים:
+    \begin{flalign*}
+        & v = \sqrt{\frac{2MH}{a^3\rho g - Mg}} \cdot \frac{a^3\rho g - Mg}{M} &&\\
+        & v = \sqrt{\frac{2H\left(a^3\rho g - Mg\right)}{M}} && \\
+    \end{flalign*}
+    ברגע שהקובייה יוצאת מהים היא מתחילה להאיץ כלפי מטה בתאוצת הכובד.
+    נחשב את פונקציית גובה הקוביה כתלות בזמן ונגזור כדי לקבל את הגובה המקסימלי:
+    \begin{flalign*}
+        & y(t) = t\sqrt{\frac{2H\left(a^3\rho g - Mg\right)}{M}} - \frac{gt^2}{2} &&\\
+        & \frac{d\,y}{d\,t} = \sqrt{\frac{2H\left(a^3\rho g - Mg\right)}{M}} - gt = 0 &&\\
+        & t = \sqrt{\frac{2H\left(a^3\rho - M\right)}{Mg}} &&\\
+        & y_{max} = \sqrt{\frac{\left( 2H\left(a^3\rho - M\right) \right)^2}{M^2}} - \frac{H\left( a^3 \rho - M \right)}{M} &&\\
+        & y_{max} = \frac{2H\left( 2H\left(a^3\rho - M\right) \right)}{M} - \frac{H\left( a^3 \rho - M \right)}{M} 
+        = \frac{H\left( a^3 \rho - M \right)}{M} &&\\      
+    \end{flalign*}
+
+    \item 
+    נתובנן בכוחות הפועלים על הקובייה.
+    פועל עליה כח למטה $Mg$, ובנוסף פועל על החלק ששקוע בתוך המים של הקובייה כח ציפה כלפי מעלה.
+    עם החלק התחתון של הקובייה היה מים, כח הציפה עליו היה 
+    $a^2h\rho g$
+    כדי לבטל את כח הכבידה עליו לכן זה גם אותו כח שיפעל הקובייה המוצקה.
+    מהחוק הראשון של ניוטון נקבל:
+    \begin{flalign*}
+        & a^2h\rho g - Mg = 0 &&\\
+        & M = a^2h \rho &&\\
+        & h = \frac{M}{a^2\rho} &&
+    \end{flalign*}
+    \textbf{הערה:} במשוואה השנייה קיבלנו שאם החלק ששקוע במים של הקובייה היה מים, המסה שלו היתה מסת כל הקובייה.
+
+
+    \item 
+    כאשר כמות נפח בגודל של נפח החלק השקוע של קוביית הקרח יותך, מסת החלק הזה תהיה שווה למסת הקובייה כולה, )כפי שראינו בסעיף הקודם( כלומר עדיין הקובייה תפעיל את אותו הכח על המים ופני המים לא ישתנו. כעת יש חלק אחר של התיבה ששקוע במים וגם כאשר הוא יותך לא יקרה כלום וחוזר חלילה.
+    כלומר פני המים לא יעלו ולא ירדו.
+\end{enumerate}
+
+\newpage
+\subsection*{מעבר לכל ספיקה סבירה )שאלה פתוחה מהאימון של אשכול B(}
+\begin{enumerate}
+    \item
+    חלקיק האבק ינוע במהירות הזרימה של הנוזל ולכן הוא יעבור מרחק 
+    $ut$.
+
+    \item 
+    נפח הנוזל שחוצה חתך של הצינור הוא המרחק שחלקיק זורם בו לאורך פרק הזמן, כפול שטח החתך:
+    \begin{flalign*}
+        &V = Aut&&
+    \end{flalign*}
+
+    \item 
+    ספיקת המסה היא הנפח שחישבנו בסעיף הקודם, כפול הצפיפות )כלומר מסת הנוזל שחצתה את חתך הצינור(, לחלק לפרק הזמן שלקח לנוזל לחצות את החתך:
+    \begin{flalign*}
+        & Q = \frac{\rho Aut}{t} = \rho Au &&
+    \end{flalign*}
+    \item 
+    ספיקת המסה חייבת להיות זהה בשני קצוות הצינור מכיוון שבכל מקרה אחר בקצה מסויים כמות מסה כלשהי תנוע בקצב איטי יותר, ומסה תתחיל להצטבר בקצה זה עד שהצינור יכיל באיזור מסויים יותר מדי מים והוא יתפוצץ.
+    לכן:
+    \begin{flalign*}
+        &Q_1 = Q_2&&
+    \end{flalign*}
+
+    \item 
+    מכיוון שספיקת המסה נשארת זהה,
+    מתקיים:
+    \begin{flalign*}
+        &\rho A_1 v_1 = \rho A_2 v_2&&\\
+        &v_2 = \frac{A_1}{A_2} v_1&&
+    \end{flalign*}
+
+    \item 
+    מכיוון שזה צינור רגיל שבו לשני הקצוות יש את אותו השטח, מהנוסחה מקבלים שמהירות המים בקצה העליון היא אותה מהירות שבה מזרימים את המים אל הקצה התחתון. כלומר המים יוצאים מהצינור במהירות $v$.
+    \begin{flalign*}
+        &y = (v\sin \alpha)t - \frac{gt^2}{2}&&\\
+        &\dot{y} = v\sin\alpha - gt = 0&&\\
+        &t = \frac{v\sin\alpha}{g}&&\\
+        &y_{max} = \frac{v^2\sin^2\alpha}{g} - \frac{v^2\sin^2\alpha}{2g} = \frac{v^2\sin^2\alpha}{2g}&&
+    \end{flalign*}
+
+    \item 
+    נסמן את שטח החתך בנק' הגבוהה ביותר של הזרנוק ב
+    $A_2$.\\
+    בנקודה הגבוהה ביותר של זרנוק המים, המהירות היא אופקית לחלוטין )כי השיפוע הוא 0(. בנקודה זו, מהירות הזרם היא 
+    $v\cos\alpha$,
+    לכן הספיקה של הזרם היא 
+    $\rho A_2 v\cos\alpha$.
+    מכיוון שהספיקה היא קבועה, הספיקה הזו שווה לספיקה שהיתה בתוך הצינור עצמו כלומר:
+    \begin{flalign*}
+        &\rho A_2 v\cos \alpha = \rho A v&&\\
+        &A_2 = \frac{A}{\cos \alpha}&&
+    \end{flalign*}
+\end{enumerate}
 
 
 
+
+
+\newpage
 \section*{מכניקה}
 \subsection*{שאלה מהתרגול}
 נתבונן בכוחות הפועלים על החוליות בכל צד:
@@ -61,15 +204,73 @@ $n$
 
 \newpage
 \subsection*{זינוק בירידה - המשך}
+\begin{enumerate}
+    \item 
+    נפרק את תאוצת הכובד
+    $g$
+    לשני לרכיב מקביל למישור ורכיב מאונך למישור:
+    $g_{\parallel}, g_{\perp}$.\\
+    \begin{flalign*}
+        &g_{\perp} = g\cos{\alpha}&&\\
+        &g_{\parallel} = g\sin{\alpha}&&\\
+    \end{flalign*}
+    \begin{align*}
+        \centering
+        \fbox{
+            \includegraphics[scale=0.4]{images/jump_on_lowering_diagram1.png}
+        }
+    \end{align*}
+    בחלק הראשון של השאלה הזאת )במטלה הקודמת( ראינו שמהירות הפגיעה הראשונה הכוללת היא 
+    $\sqrt{2gh}$
+    כלומר המהירות המאונכת )למישור( היא 
+    $\sqrt{2gh}\cos{\alpha}$.\\
+    מכיוון שבציר המאונך הכדור נופל כל הזמן נפילות חופשיות )בתאוצה 
+    $g_{\perp}$(
+    המהירות האנכית בתחילת כל קפיצה שווה למהירות האנכית בסוף כל קפיצה. כלומר בין קפיצות, גודלה של המהירות האנכית נשמר )ומשנה כיוון(.
+    לכן משך כל הקפיצות זהה.
+    נחשב את משך הקפיצה:
+    \begin{flalign*}
+        &r_{\perp}(\Delta t) = \sqrt{2gh}\;\Delta t\cos{\alpha} - \frac{g_{\perp}{\Delta t}^2}{2} = 0&&\\
+        &\sqrt{2gh}\;\Delta t\cos{\alpha} = \frac{g\cos{\alpha}\;{\Delta t}^2}{2}&&\\
+        &\Delta t = \sqrt{\frac{8h}{g}}&&
+    \end{flalign*}
+    לכן זמן הפגיעה ה
+    $n$-ית
+    הוא 
+    $n$ 
+    פעמים משך הקפיצה הזו ועוד הזמן שלוקח עד שהכדור פוגע במישור בפעם הראשונה:
+    \begin{flalign*}
+        &t_n = n\Delta t + \sqrt{\frac{2h}{g}}&&\\
+        &t_n = (2n - 1)\sqrt{\frac{2h}{g}}&&\\
+    \end{flalign*}
+
+    \item 
+    כעת נפתור את הבעיה באמצעות הסתכלות עליה בציר המקביל למישור.\\
+    מכיוון שהפגיעות במישור מפעילות כח נורמלי רק בכיוון המאונך למישור, התאוצה בכיוון המקביל למישור קבועה ולכן:
+    \begin{flalign*}
+        &D_\parallel(t_n) = \frac{g_\parallel \; {t_n}^2}{2}&&\\
+        &D_\parallel(t_n) = \frac{g\sin{\alpha} \; (2n-1)^2\left(\frac{2h}{g}\right)}{2}&&\\
+        &D_\parallel(t_n) = h(2n-1)^2\sin{\alpha}&&\\
+        &x_n = D_\parallel(t_n)\cos\alpha = h(2n-1)^2\sin{\alpha}\cos{\alpha} = \frac{h}{2} (2n-1)^2 \sin{(2\alpha)}&&\
+    \end{flalign*}
+    אבל צריך לזכור לחסר את המרחק בציר ה $x$ שהכדור ככיבול עובר עד הפגיעה הראשונה מכיוון שהמיקום האופקי של הפגיעה הראשונה הוא 0:
+    \begin{align*}
+    \centering
+        \fbox{
+            \includegraphics[scale=0.4]{images/jump_on_lowering_diagram2.png}
+        }
+    \end{align*}
+    \begin{flalign*}
+        &x_n = \frac{h}{2} (2n-1)^2 \sin{(2\alpha)} - \frac{h}{2} (2-1)^2 \sin{(2\alpha)} =  2nh(n-1) \sin{(2\alpha)}
+    \end{flalign*}
+\end{enumerate}
+
+
+
 
 \newpage
 \subsection*{הרמת משקולות}
-\begin{align*}
-    \centering
-    \fbox{
-        \includegraphics[scale=0.4]{images/t2_q2_diagram.png}
-    }
-\end{align*}
+\image{images/t2_q2_diagram.png}{0.4}
 \begin{enumerate}
     \item 
     מהשרטוט ניתן לראות שמופעל על הפלטפורמה התחתונה כח של 
@@ -102,12 +303,7 @@ $n$
 
 \newpage
 \subsection*{גלגל הגלגלות}
-\begin{align*}
-    \centering
-    \fbox{
-        \includegraphics[scale=0.4]{images/wheels_wheel.png}
-    }
-\end{align*}
+\image{images/wheels_wheel.png}{0.4}
 \begin{flalign*}
     &L=2\sum_{j\;=\;1}^{n} l_j \qquad\qquad\qquad \Bigg/\frac{d^2}{d^2 t}&&\\
     &0=\ddot{L}=2\sum_{j\;=\;1}^{n} a_j \quad\quad\quad\quad \Bigg/ :2 &&\\
@@ -143,12 +339,7 @@ $H(m_1, m_2, \dots, m_n)$
 \begin{enumerate}
   \item \textbf{כלל המכפלה:} \\
     נפרק את מכפלת הפונקציות כמתואר באיור הבא: 
-    \begin{align*}
-        \centering
-        \fbox{
-            \includegraphics[scale=0.4]{images/derivative_drawing.png}
-        }
-    \end{align*}
+    \image{images/derivative_drawing.png}{0.4}
     
     \begin{flalign*}
       \frac{d (f g)}{d x} = \lim_{h \to 0}{\frac{f(x+h)g(x+h) - f(x)g(x)}{h}} 
@@ -201,6 +392,8 @@ $H(m_1, m_2, \dots, m_n)$
 
 
 
+
+\newpage
 \subsection*{מן הפח אל הפחית}
 \begin{enumerate}
   \item הכוונה בעובי קטן מאוד היא עובי קטן מאוד ביחס לרדיוס הפחית ולגובה הפחית כדי שהעובי לא ישפיע על נפח הפחית:
@@ -257,12 +450,7 @@ $H(m_1, m_2, \dots, m_n)$
     כלומר היחס בין הרדיוס לגובה שנותן את העלות המינימלית הוא $1 : 2$
 
     \item בפחית קוקה קולה רגילה,היחס בין הרדיוס לגובה הוא $\frac{6}{31}$:
-    \begin{align*}
-        \centering
-        \fbox{
-            \includegraphics[scale=0.4]{images/can_measures.png}
-        }
-    \end{align*}
+    \image{images/can_measures.png}{0.4}
     נסמן את פונקצית עלות הייצור של הפחית כתלות ברדיוס ב
     $f(r)$,
     את עובי הבסיסים ב
@@ -307,19 +495,9 @@ $H(m_1, m_2, \dots, m_n)$
 \subsection*{באש...}
 אם נשקף את האש ביחס לים, נוכל למתוח קטע בין שגיא לשיקוף, וזה יהיה המרחק הקצר ביותר בין השיקוף לשגיא.\\
 מכיוון שקו המים הוא אנך אמצעי לקטע שבין האש לשיקוף, המרחקים מנק' החיתוך של הקטע שמתחנו מקודם, לאש ולשיקוף של האש, שווים:
-\begin{align*}
-    \centering
-    \fbox{
-        \includegraphics[scale=0.4]{images/geogebra-export.png}
-    }
-\end{align*}
+\image{images/geogebra-export.png}{0.4}
 לכן אותה נק' חיתוך היא בהכרך הנקודה שממנה שגיא לוקח מים.
-\begin{align*}
-    \centering
-    \fbox{
-        \includegraphics[scale=0.4]{images/on_fire_figure_with_angles.png}
-    }
-\end{align*}
+\image{images/on_fire_figure_with_angles.png}{0.4}
 זווית $\alpha$ שווה ל-$\frac{\pi - \theta}{2}$.\\
 נסמן את המרחק על ציר ה
 $y$ 
@@ -363,12 +541,7 @@ $y_1+y_2 = h$
 $dy$
 ששואף לאפס ממסלול A.\\
 מכיוון שהמרחק על קו החוף בין המסלולים שואף לאפס, גם הזוויות בין המסלולים ישאפו לאפס:
-\begin{align*}
-    \centering
-    \fbox{
-        \includegraphics[scale=0.8]{images/and_in_the_water_diagram.png}
-    }
-\end{align*}
+\image{images/and_in_the_water_diagram.png}{0.8}
 לכן הקטע הצהוב זה הקטע שמתווסף למסלול, והקטע הטורקיז זה הקטע שיורד מהמסלול.\\
 נרצה לחשב את השינוי בזמן שלוקח לשגיא להגיע לילד ביחס לשינוי ב
 $dy$.
@@ -389,12 +562,7 @@ $v\cdot dy\cos \alpha$.\\
 \end{flalign*}
 
 בנוסף, קיים עוד קשר בין שתי הזוויות:
-\begin{align*}
-    \centering
-    \fbox{
-        \includegraphics[scale=0.1]{images/CamScanner 10-05-2023 20.48.jpg}
-    }
-\end{align*}
+\image{images/CamScanner 10-05-2023 20.48.jpg}{0.1}
 כלומר:
 \begin{flalign*}
     &d_1 \cot \alpha + d_2 \cot \beta = D&&
