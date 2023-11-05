@@ -1,0 +1,123 @@
+\documentclass{article}
+\usepackage[utf8x]{inputenc}
+\usepackage[english,hebrew]{babel}
+\usepackage{amsmath} 
+\selectlanguage{hebrew}
+\usepackage[top=2cm,bottom=2cm,left=2.5cm,right=2cm]{geometry}
+\usepackage{graphicx}
+\graphicspath{ {./images/} }
+\usepackage{wrapfig}
+\usepackage{empheq}
+\usepackage{dashbox}
+
+\newcommand{\image}[2]{
+    \begin{align*}
+        \centering
+        \includegraphics[scale=#2]{#1}
+    \end{align*}
+}
+
+\newcommand{\qimage}[2]{
+    \hrule
+    \image{#1}{#2}
+    \hrule
+    \vspace{8pt}
+}
+
+\title{נבחרת ישראל הצעירה בפיזיקה - מטלה 3}
+\author{איתי מור}
+\begin{document}
+\maketitle
+
+\newcommand{\derivative}[2]{\frac{d\,#1}{d\,#2}}
+
+\section*{קינמטיקה מתקדמת}
+\subsection*{נגזרת של וקטור}
+\begin{enumerate}
+    \item נגזרת של וקטור היא וקטור.\\
+    ניתן לראות זאת מהנוסחה:
+    \begin{flalign*}
+        &\derivative{\vec{r}}{t} = \lim_{dt \to 0} \frac{\vec{r}(t+dt)-\vec{r}(t)}{dt}&&
+    \end{flalign*}
+    ההפרש בין 2 וקטורים )המונה( הוא וקטור, וחלוקה של וקטור בסקלר זה גם וקטור.
+    % \image{images/vector_derivative_diagram.png}{0.4}
+
+    \item 
+    \begin{flalign*}
+        &\derivative{\left[ x(t)\hat{x} + y(t)\hat{y} + z(t)\hat{z}\right] }{t}
+            = \lim_{dt \to 0} \frac{x(t+dt)\hat{x} - x(t)\hat{x} + y(t+dt)\hat{y} - y(t)\hat{y} + z(t+dt)\hat{z} - z(t)\hat{z}}{dt}&&\\
+        &=\hat{x}\lim_{dt \to 0}{\frac{x(t+dt)-x(t)}{dt}} + \hat{y}\lim_{dt\to 0}{\frac{y(t+dt)-y(t)}{dt}} + \hat{z}\lim_{dt\to0}{\frac{z(t+dt)-z(t)}{dt}}&&\\
+        &=\hat{x}\cdot\derivative{x(t)}{t} + \hat{y}\cdot\derivative{y(t)}{t} + \hat{z}\cdot\derivative{z(t)}{t}&&\\
+        &=\left( {\dot{x}(t)}, {\dot{y}(t)}, {\dot{z}(t)} \right)
+    \end{flalign*}
+    כלומר רכיבי הנגזרת של וקטור, זה נגזרות רכיבי הוקטור, או במילים אחרות:
+    ניתן לגזור וקטור לפי כל רכיב בנפרד.
+\end{enumerate}
+
+\subsection*{תנועה מעגלית}
+\begin{enumerate}
+    \item אחרי יחידת זמן אחת, הזווית של הגוף גדלה ב-$\omega$.
+    ולכן אחרי זמן
+    $t$
+    הזווית גדלה ב-$\omega t$.
+    \item 
+    הזווית של וקטור המיקום היא
+    $\omega t$
+    כי זו הזוית שהגוף עובר ב-$t$ שניות.
+    לכן הוקטור שווה ל:
+    \begin{flalign*}
+        & \vec{r}(t) = \langle R\, \angle\, \omega t\rangle = (R\cos(\omega t), R\sin(\omega t))&&
+    \end{flalign*}
+\image{circular_movement_diagram1.png}{0.4}
+    \item מכיוון שמהירות היא השינוי בזמן של המיקום, כדי לקבל את וקטור המהירות, אפשר לגזור את וקטור המיקום.\\
+    בשאלה הקודמת ראינו שאפשר לגזור כל רכיב בנפרד ולכן:
+    \begin{flalign*}
+        & \vec{v}(t) = \derivative{\vec{r}(t)}{t} = ((R\cos(\omega t))', (R\sin(\omega t))') = 
+        (-R\omega\sin(\omega t), R\omega\cos(\omega t)) &&
+    \end{flalign*}
+    ניתן לראות שוקטור המהירות מאונך לוקטור המיקום מכיוון שהמכפלה הסקלרית שלהם שווה ל-0:
+    \begin{flalign*}
+        & \vec{r}(t) \cdot \vec{v}(t) = -R^2\omega \sin(\omega t)\cos(\omega t) + R^2\omega\sin(\omega t)\cos(\omega t) = 0&&
+    \end{flalign*}
+
+    \item 
+    כדי לקבל את וקטור התאוצה, נגזור את וקטור המהירות:
+    \begin{flalign*}
+        & \vec{a}(t) = \derivative{\vec{v}(t)}{t} = ((-R\omega\sin(\omega t))', (R\omega\cos(\omega t))') = (-R\omega^2\cos(\omega t), -R\omega^2\sin(\omega t)) = -\omega^2\vec{r}(t)&&
+    \end{flalign*}
+    כלומר הוקטור הזה הפוך בכיוונו מוקטור המיקום או במילים אחרות, הגוף מאיץ לכיוון מרכז מעגל התנועה.
+
+    \item
+    \image{circular_movement_diagram2.png}{0.4}
+    
+    \item
+    \textbf{\underline{ביטוי לפי מהירות זוויתית:}}\\
+    בסעיף 4 ראינו שניתן להביע את וקטור התאוצה הצנטרפיטלית ברגע מסוים ע"י וקטור המיקום והמהירות הזוויתית כ $-\omega^2\vec{r}(t)$
+    ולכן גודל התאוצה הצנטרפיטלית הוא:
+    \begin{flalign*}
+        & \left|\vec{a}(t)\right| = \lvert-\omega^2\vec{r}(t)\rvert = \omega^2\lvert\vec{r}(t)\rvert = R\omega^2&&
+    \end{flalign*}
+    מבחינת יחידות זה מסתדר מכיוון שזווית זה גודל חסר יחידות )זה מבטא יחס בין 2 אורכים( ולכן:
+    \begin{flalign*}
+        &\left[R\omega^2\right] = [m]\cdot \left[ \frac{1^2}{s^2}\right] = \left[ \frac{m}{\displaystyle s^2} \right] &&
+    \end{flalign*}
+    ואכן אלו יחידות של תאוצה.\\\\
+    \textbf{\underline{ביטוי לפי מהירות משיקית:}}\\
+    נחשב את גודל המהירות המשיקית:
+    \begin{flalign*}
+        & \left|\vec{v}(t)\right| =\sqrt{(-R\omega\sin(\omega t))^2 + (R\omega\cos(\omega t))^2} =
+         \sqrt{(R\omega)^2\left(\sin^2(\omega t) +\cos^2(\omega t)\right)} = \sqrt{(R\omega)^2\cdot 1} = R\omega &&
+    \end{flalign*}
+    לכן גודל התאוצה הצנטריפטלית $R\omega^2$ שווה גם ל $\frac{\displaystyle v^2}{R}$
+    כאשר $v$ הוא גודל המהירות המשיקית.
+
+    \item
+    נסמן ב-$a_c$ את התאוצה הצנריפטלית.\\
+    מכיוון שמתיחות החוט זה הכח היחיד שפועל על הגוף, זהו גם בהכרח הכח הצנטריפטלי ששוה ל-$ma_c$
+    כלומר:
+    \begin{flalign*}
+        & T = mR\omega^2 = \frac{\displaystyle mv^2}{R}
+    \end{flalign*}
+\end{enumerate}
+
+\end{document}
